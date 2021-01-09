@@ -11,15 +11,18 @@ for i in range(0,4):
 
         return lista
 
+#Variables empleadas
     Cantidad_flores_por_ramo = 30
     a = 0
     suma_flores = 0
     lista_letras = ['a', 'b', 'c', 'd', 'e', 'f']
 
+#Nombre y tamaño ramo en random
     Nombre_ramo = random.choice(lista_letras).upper()
     Tamano_ramo=['L', 'S']
     a=random.randint(0,1)
 
+#Lista tipo de flor tiene solo 6 posibilidades, de la "a" - "f" para elegir los 3 tipos de flor a emplear
     Tipo_flor_1 = random.choice(lista_letras).lower()
     lista_letras = eliminar_letra(lista_letras, Tipo_flor_1)
     Cantidad_flor_1 = 0
@@ -38,21 +41,18 @@ for i in range(0,4):
     for x in range(1): 
         Cantidad_flor_3 = random.randint(1,10)
 
+#Reviso la cantidad de flores
     suma_flores = (Cantidad_flor_1 + Cantidad_flor_2 + Cantidad_flor_3)
 
+#Los tipos los ingreso a una lista "flores" 
     flores = [Tipo_flor_1, Tipo_flor_2, Tipo_flor_3]
     lista = sorted(flores)
-    print(lista)
-    #if suma_flores == Cantidad_flores_por_ramo:
+    #print("Esta es la lista:", lista)
 
-    Tipo_flor = str(Nombre_ramo) + str(Tamano_ramo[a]) + str(lista[0]) + str(Cantidad_flor_1)+ str(lista[1]) + str(Cantidad_flor_2) + str(lista[2]) + str(Cantidad_flor_3) + '30'
+    Diseno_ramo_flor = (str(Nombre_ramo) + str(Tamano_ramo[a]) + str(lista[0]) + str(Cantidad_flor_1)
+    + str(lista[1]) + str(Cantidad_flor_2) + str(lista[2]) + str(Cantidad_flor_3) + '30')
+    print(Diseno_ramo_flor)
 
-
-
-    print(Tipo_flor)
-
-    diseño=open("data/diseno_ramos.txt","a") 
-    diseño.write(Tipo_flor + '\n')
-    
-
-
+#Genero el archivo Diseno_ramo.txt en la carpeta "data" y guardo los diseños generados
+    diseno = open("data/diseno_ramos.txt","a") 
+    diseno.write(Diseno_ramo_flor + '\n')
