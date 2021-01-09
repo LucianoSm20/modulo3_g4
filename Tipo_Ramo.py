@@ -16,18 +16,15 @@ diferencia=0
 lista_diseño=[]
 
 # Lee los modelos de ramos desde el archivo Diseño_Ramos
-diseño=open('Diseno_Ramos.txt',"r")
+diseño=open('data/Diseno_ramos.txt',"r")
 for linea in diseño:
     print()
     print(linea)
     lista_diseño.append(linea)
 diseño.close()
 
-
 nn=len(lista_diseño)
 print (nn)
-
-
 
 # Produce los nombres, tamaño, especies 
 for nombre_Tamaño in range(1):
