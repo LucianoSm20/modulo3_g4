@@ -1,6 +1,7 @@
 import string 
 import random 
 
+
 for i in range(0,4):
     def eliminar_letra(lista, letra):
 
@@ -47,7 +48,7 @@ for i in range(0,4):
 #Los tipos los ingreso a una lista "flores" 
     flores = [Tipo_flor_1, Tipo_flor_2, Tipo_flor_3]
     lista = sorted(flores)
-    #print("Esta es la lista:", lista)
+    print("Esta es la lista:", lista)
 
     Diseno_ramo_flor = (str(Nombre_ramo) + str(Tamano_ramo[a]) + str(lista[0]) + str(Cantidad_flor_1)
     + str(lista[1]) + str(Cantidad_flor_2) + str(lista[2]) + str(Cantidad_flor_3) + '30')
@@ -56,3 +57,36 @@ for i in range(0,4):
 #Genero el archivo Diseno_ramo.txt en la carpeta "data" y guardo los diseños generados
     diseno = open("data/diseno_ramos.txt","a") 
     diseno.write(Diseno_ramo_flor + '\n')
+
+
+
+"""
+#Genero el ramo completo
+if suma_flores != 30:
+
+    Tipo_flor_complementaria = random.choice(lista_letras).lower()
+    Cantidad_flor_complementaria = (Cantidad_flores_por_ramo - suma_flores)
+    Ramo_flor = (str(Nombre_ramo) + str(Tamano_ramo[a]) + str(lista[0]) + str(Cantidad_flor_1)
+    + str(lista[1]) + str(Cantidad_flor_2) + str(lista[2]) + str(Cantidad_flor_3) + str(Tipo_flor_complementaria) + str(Cantidad_flor_complementaria))
+    print(Diseno_ramo_flor)
+
+
+class Ramo_flores:
+
+    def __init__(self, especie_flor, tamano_flor, nombre_ramo, tamano_ramo, diseno_ramo, ramo):
+        self.especie_flor = 
+        self.tamano_flor = 
+        self.nombre_ramo =
+        self.tamano_ramo =
+        self.diseno_ramo = Diseno_ramo_flor
+        self.ramo =
+    
+    def consulta_diseno_ramo():
+        pass
+   
+    def consulta_inventario():
+        pass
+
+    def arma_ramo()
+        pass
+    """
