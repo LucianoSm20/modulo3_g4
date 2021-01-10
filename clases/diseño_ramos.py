@@ -1,0 +1,5 @@
+diseño=open("Data/Diseño_Ramos.txt","w") 
+diseño.write("UL10s4x2q30\n")
+diseño.write("MS7w10k4j30\n")
+diseño.write("ZS8p9u2e30\n")
+diseño.close() 
