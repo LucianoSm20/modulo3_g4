@@ -4,14 +4,19 @@ import random
 def Main(lista_flores, lista_inventarios, lista_disenos):
 
     # se hace la lectura de los diseños ramos y se crean sus correspondientes objetivos y se añade a la lista de diseños
-    disenos=open('data/diseno_ramos.txt',"r")
+    disenos = open('data/diseno_ramos.txt',"r")
     for diseno_actual in disenos:
         nuevo_diseno = lista_disenos.Agregar_disenos(diseno_actual)
         lista_disenos.lista_disenos_totales.append(nuevo_diseno)
     disenos.close()
 
-    for i in lista_disenos.lista_disenos_totales:
-        print(i.nombre_diseno)
+    flores_iniciales = open('data/flores_iniciales.txt', 'r')
+    for flor in flores_iniciales:
+        nueva_flor = lista_flores.Agregar_flor(flor[2], flor[0])
+        lista_flores.lista_flores_totales.append(nueva_flor)
+        al_inventario(lista_inventarios, nueva_flor)
+
+    
 
     tiempo = 0
     while tiempo < 10:
@@ -23,9 +28,8 @@ def Main(lista_flores, lista_inventarios, lista_disenos):
         lista_flores.lista_flores_totales.append(nueva_flor)
         al_inventario(lista_inventarios, nueva_flor)
 
-
     for i in lista_inventarios.lista_inventarios_totales:
-        print (i.tamano, i.especie, i.cantidad)
+        print(i.especie, i.tamano, i.cantidad)
 
 
     
@@ -105,7 +109,7 @@ class Inventario_flores:
     def __init__(self, tamano, especie):
         self.tamano = tamano
         self.especie = especie
-        self.cantidad = 1
+        self.cantidad = 20
 
 class Lista_flores:
 
