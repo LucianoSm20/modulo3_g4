@@ -2,8 +2,9 @@ import time
 import random 
 import lista_inventario
 import os
+import armar_ramos
 
-def Main(lista_flores, lista_inventarios, lista_disenos):
+def Main(lista_flores, lista_inventarios, lista_disenos, ramos_flores):
 
     # se hace la lectura de los diseños ramos y se crean sus correspondientes objetivos y se añade a la lista de diseños
     disenos = open('Data/diseno_ramos.txt',"r")
@@ -11,6 +12,7 @@ def Main(lista_flores, lista_inventarios, lista_disenos):
         nuevo_diseno = lista_disenos.Agregar_disenos(diseno_actual)
         lista_disenos.lista_disenos_totales.append(nuevo_diseno)
     disenos.close()
+
 
     tiempo = 0
     while tiempo < 30:
@@ -23,6 +25,7 @@ def Main(lista_flores, lista_inventarios, lista_disenos):
         nueva_flor = lista_flores.Agregar_flor(tamano, especie)
         lista_flores.lista_flores_totales.append(nueva_flor)
         al_inventario(lista_inventarios, nueva_flor)
+        ramos_flores.descomposicion(lista_disenos.lista_disenos_totales)
 
     for i in lista_inventarios.lista_inventarios_totales:
         #print(i.especie, i.tamano, i.cantidad)

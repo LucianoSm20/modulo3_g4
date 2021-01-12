@@ -55,7 +55,7 @@ for i in range(0,4):
     print(Diseno_ramo_flor)
 
 #Genero el archivo Diseno_ramo.txt en la carpeta "data" y guardo los diseños generados
-    diseno = open("data/diseno_ramos.txt","a") 
+    diseno = open("Data/diseno_ramos.txt","a") 
     diseno.write(Diseno_ramo_flor + '\n')
 
 
